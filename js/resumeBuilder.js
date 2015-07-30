@@ -1,30 +1,35 @@
-// $("#main").append(["Maddie"]);
+var work = {};
+work.position = "Interaction Designer";
+work.employer = "Brady Corporation";
+work.years = "1";
+work.city = "Milwaukee";
 
-// [string].replace([old],[new]);
-
-
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-
-// var awesomeThoughts = "My name is Maddie and I am AWESOME!";
-// console.log(awesomeThoughts);
-
-// var funThoughts = awesomeThoughts.replace("AWESOME", "FUN");
-// console.log(funThoughts);
-
-// $("#main").append(funThoughts);
-
-
-// var name = "Maddie Huebner"
-// var role = "Interaction Desinger"
-
-// var formattedName = HTMLheaderName.replace("%data%", name);
-// var formattedRole = HTMLheaderRole.replace("%data%", role);
-
-// $("#header").prepend(formattedRole);
-// $("#header").prepend(formattedName);
-
+var projects = {
+	"project1": [
+		{
+			"name": "Mobile Website",
+			"year": 2015,
+			"description": "Brady's mobile website allows users to quickly complete common tasks in a mobile-friendly environment including searching for products, viewing product information, and contacting Brady.",
+			"link": "http://m.us.amer.bradyid.com/"
+		}
+	],
+	"project2": [
+		{
+			"name": "Product Registraion Form",
+			"year": "2015",
+			"description": "Brady's product registration page allows users to select their product in a visually engaging way and register it with the company.",
+			"link": "http://www.us.amer.bradyid.com/en-us/forms/register-your-product/product-registration/step-1"
+		}
+	],
+	"project3": [
+		{
+			"name": "Technical Support Form",
+			"year": "2015",
+			"description": "Brady's technical support form allows users to contact Brady for product information and troubleshooting.",
+			"link": "http://www.us.amer.bradyid.com/en-us/forms/technical-support/technical-support"
+		}
+	]
+}
 
 var bio = {
 	"name" : "Maddie",
@@ -38,26 +43,6 @@ var bio = {
 		],
 	"bioPhoto" : "images/me.jpg"
 };
-
-
-$("#header").prepend(bio.name);
-
-// var formattedMobile = HTMLmobile.replace(%data%, bio.contacts.phone);
-// $("topContacts").prepend(formattedMobile);
-
-
-var work = {};
-work.position = "Interaction Designer";
-work.employer = "Brady Corporation";
-work.years = "1";
-work.city = "Milwaukee";
-
-// var education = {};
-// education["name"] = "University of Wisconsin - Milwaukee";
-// education["city"] = "Milwaukee";
-
-// $("#main").append(work["position"]);
-// $("#main").append(education.name);
 
 var education = {
 	"schools": [
