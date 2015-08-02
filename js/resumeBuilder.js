@@ -1,32 +1,26 @@
 var work = {
-	"job1": [
-		{
-			"employer": "Brady Corporation",
-			"title": "User Experience Specialist",
-			"location": "Milwaukee, WI",
-			"dates": "August 2014 - Present",
-			"description": "Integrate UX research and design into a cross-functional agile team, create wireframes/prototypes and utilize usability studies to quickly iterate, write basic HTML and CSS code for web-based projects."
-		}
-	],
-	"job2": [
+	"jobs": [
+{
+		"employer": "Brady Corporation",
+		"title": "User Experience Specialist",
+		"location": "Milwaukee, WI",
+		"dates": "August 2014 - Present",
+		"description": "Integrate UX research and design into a cross-functional agile team, create wireframes/prototypes and utilize usability studies to quickly iterate, write basic HTML and CSS code for web-based projects."
+		},
 		{
 			"employer": "Brady Corporation",
 			"title": "User Experience Intern",
 			"location": "Milwaukee, WI",
 			"dates": "July 2013 - August 2014",
 			"description": "Collaborated with UX team members to conduct research projects utilizing tools such as Omniture, Google Analytics, usability testing, heuristic evaluations, and landing page optimization; provided website design update recommendations to stakeholders and created prototypes using interactive wireframe software."
-		}
-	],
-	"job3": [
+		},
 		{
 			"employer": "Brady Corporation",
 			"title": "Marketing Research Intern",
 			"location": "Milwaukee, WI",
 			"dates": "April 2012 - July 2013",
 			"description": "Organized multinational Customer Experience surveys from beginning to end including cleansing contact lists, executing survey launches, and analyzing customer feedback with Excel and SPSS to help Brady's leadership team make informed decisions. Increased action management completion rates by 40% year over year. Also conducted customer phone interviews, synthesized interview notes, and completed New Product Blueprinter training."
-		}
-	],
-	"job4": [
+		},
 		{
 			"employer": "TLS Behavioral Health",
 			"title": "Community Recovery Specialist",
@@ -65,7 +59,7 @@ var projects = {
 }
 
 var bio = {
-	"name" : "Maddie",
+	"name" : "Maddie Huebner",
 	"role" : "Interaction Designer",
 	"contacts" : {
 		"mobile" : "(312)361-4674",
@@ -74,9 +68,7 @@ var bio = {
 		"location" : "Milwaukee, WI"
 	},
 	"welcomeMessage" : "Welcome to my resume!",
-	"skills" : [
-		"Interaction Design", "Usability Research", "Prototyping"
-		],
+	"skills" : ["Interaction Design", "Usability Research", "Prototyping"],
 	"bioPhoto" : "images/me.jpg"
 }
 
@@ -108,5 +100,40 @@ var education = {
 		}
 	]
 }
+
+// Troubleshooted using:  https://discussions.udacity.com/t/skills-bio-is-not-showing-up-in-header/26961/4
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
+
+if(bio.skills.length > 0) {
+
+	$("#header").append(HTMLskillsStart);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkill);
+
+}
+
+// for(job in work.job) {
+//	$("#workExperience").append(HTMLworkStart);
+//
+//	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+//	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+//	var formattedEmployerTitle = formattedEmployer + formattedTitle;
+//
+//	$(".work-entry:last").append(formattedEmployerTitle);
+//}
+
+
+
 
 
