@@ -1,11 +1,11 @@
 var work = {
 	"jobs": [
 		{
-		"employer": "Brady Corporation",
-		"title": "User Experience Specialist",
-		"location": "Milwaukee, WI",
-		"dates": "August 2014 - Present",
-		"description": "Integrate UX research and design into a cross-functional agile team, create wireframes/prototypes and utilize usability studies to quickly iterate, write basic HTML and CSS code for web-based projects."
+			"employer": "Brady Corporation",
+			"title": "User Experience Specialist",
+			"location": "Milwaukee, WI",
+			"dates": "August 2014 - Present",
+			"description": "Integrate UX research and design into a cross-functional agile team, create wireframes/prototypes and utilize usability studies to quickly iterate, write basic HTML and CSS code for web-based projects."
 		},
 		{
 			"employer": "Brady Corporation",
@@ -32,28 +32,24 @@ var work = {
 }
 
 var projects = {
-	"project1": [
+	"project": [
 		{
 			"title": "Mobile Website",
 			"dates": 2015,
 			"description": "Brady's mobile website allows users to quickly complete common tasks in a mobile-friendly environment including searching for products, viewing product information, and contacting Brady.",
-			"images": "http://m.us.amer.bradyid.com/"
-		}
-	],
-	"project2": [
+			"images": "http://loremflickr.com/g/320/240/project1"
+		},
 		{
 			"title": "Product Registraion Form",
 			"dates": "2015",
 			"description": "Brady's product registration page allows users to select their product in a visually engaging way and register it with the company.",
-			"images": "http://www.us.amer.bradyid.com/en-us/forms/register-your-product/product-registration/step-1"
-		}
-	],
-	"project3": [
+			"images": "http://loremflickr.com/g/320/240/project2"
+		},
 		{
 			"title": "Technical Support Form",
 			"dates": "2015",
 			"description": "Brady's technical support form allows users to contact Brady for product information and troubleshooting.",
-			"images": "http://www.us.amer.bradyid.com/en-us/forms/technical-support/technical-support"
+			"images": "http://loremflickr.com/g/320/240/project3"
 		}
 	]
 }
@@ -154,14 +150,39 @@ $(document).click(function(loc) {
 
 });
 
+//The code below adds an "Internationalize" button and formats the name like "Maddie HUEBNER."
+
+//$("#main").append(internationalizeButton);
+
+//function inName(finalName) {
+//
+//	var names = bio.name.split(" ");
+//	names[1] = names[1].toUpperCase();
+//	names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+
+//	finalName = names.join(" ");
+//	return finalName;
+//}
 
 
+//title, dates, description, images
+projects.display = function() {
+	for(project in projects.project) {
+		$("#projects").append(HTMLprojectStart);
 
+		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.project[project].title);
+		$(".project-entry:last").append(formattedProjectTitle);
 
+		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.project[project].dates);
+		$(".project-entry:last").append(formattedProjectDates);
 
+		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.project[project].description);
+		$(".project-entry:last").append(formattedProjectDescription);
 
+		var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.project[project].images);
+		$(".project-entry:last").append(formattedProjectImage);
+	}
+}
 
-
-
-
+projects.display()
 
