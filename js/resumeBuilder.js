@@ -186,3 +186,11 @@ projects.display = function() {
 
 projects.display()
 
+
+$("#map-div").append(googleMap);
+
+
+
+
+
+
