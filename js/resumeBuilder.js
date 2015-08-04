@@ -119,7 +119,7 @@ if(bio.skills.length > 0) {
 
 }
 
-function displayWork() {
+work.display = function() {
 	for(job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 
@@ -140,7 +140,8 @@ function displayWork() {
 	}
 }
 
-displayWork();
+work.display()
+
 
 $(document).click(function(loc) {
 	var x = loc.pageX;
