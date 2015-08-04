@@ -99,25 +99,30 @@ var education = {
 
 // Troubleshooted using:  https://discussions.udacity.com/t/skills-bio-is-not-showing-up-in-header/26961/4
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+bio.display = function() {
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+
+	$("#header").prepend(formattedRole);
+	$("#header").prepend(formattedName);
 
 
-if(bio.skills.length > 0) {
+	if(bio.skills.length > 0) {
 
-	$("#header").append(HTMLskillsStart);
+		$("#header").append(HTMLskillsStart);
 
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkill);
+		var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+		$("#skills").append(formattedSkill);
+		formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+		$("#skills").append(formattedSkill);
+		formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+		$("#skills").append(formattedSkill);
 
+	}
 }
+
+bio.display()
 
 work.display = function() {
 	for(job in work.jobs) {
@@ -142,6 +147,8 @@ work.display = function() {
 
 work.display()
 
+
+//Code to capture clicks on the page
 
 $(document).click(function(loc) {
 	var x = loc.pageX;
@@ -187,7 +194,7 @@ projects.display = function() {
 
 projects.display()
 
-
+// Add the map to the page
 $("#map-div").append(googleMap);
 
 
