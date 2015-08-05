@@ -107,9 +107,6 @@ bio.display = function() {
 	$("#header").prepend(formattedRole);
 	$("#header").prepend(formattedName);
 
-//	var formattedMobile = HTMLmobile.replace("%data%"), bio.contacts.mobile);
-
-
 	if(bio.skills.length > 0) {
 
 		$("#header").append(HTMLskillsStart);
@@ -135,6 +132,12 @@ bio.display = function() {
 
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 	$("#topContacts").append(formattedLocation);
+
+	var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPhoto);
+	$("#header").append(formattedBioPic);
+
+	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedWelcomeMsg);
 
 }
 
