@@ -73,7 +73,7 @@ var education = {
 		{
 			"name": "University of Wisconsin - Milwaukee",
 			"location": "Milwaukee, WI, United States",
-			"degree": "BBA",
+			"degree": "BBA - Major:  Marketing, Minor: Anthropology",
 			"majors": "Marketing",
 			"minor": "Anthropology",
 			"dates": "September 2009 - August 2014",
@@ -82,9 +82,9 @@ var education = {
 		{
 			"name": "Novancia Business School",
 			"location": "Paris, France",
-			"dates": "May 2014 - June 2014",
-			"program": "Study Abroad Program:  Immersion in European Business",
-			"url": "http://www.novancia.fr/?lang=en"
+		 	"degree": "Study Abroad Program:  Immersion in European Business",
+		 	"dates": "May 2014 - June 2014",
+		 	"url": "http://www.novancia.fr/?lang=en"
 		}
 	],
 	"onlineCourses": [
@@ -216,8 +216,36 @@ projects.display = function() {
 
 projects.display()
 
+//Add education to the page
+
+education.display = function() {
+	$("#education").append(HTMLschoolStart);
+
+	for(schools in education.schools) {
+		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[schools].name);
+		$(".education-entry:last").append(formattedSchoolName);
+		var formattedDegreeName = HTMLschoolDegree.replace("%data%", education.schools[schools].degree);
+		$(".education-entry:last").append(formattedDegreeName);
+		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[schools].dates);
+		$(".education-entry:last").append(formattedSchoolDates);
+		var formattedSchoolLocation = HTMLschoolDegree.replace("%data%", education.schools[schools].location);
+		$(".education-entry:last").append(formattedSchoolLocation);
+	}
+
+	$("#education").append(HTMLschoolStart);
+
+	var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[schools].name);
+	$(".education-entry:last").append(formattedSchoolName);
+
+}
+
+education.display()
+
 // Add the map to the page
 $("#map-div").append(googleMap);
+
+
+
 
 
 
