@@ -232,14 +232,23 @@ education.display = function() {
 		$(".education-entry:last").append(formattedSchoolLocation);
 	}
 
-	$("#education").append(HTMLschoolStart);
+	$("#education").append(HTMLonlineClasses);
 
-	var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[schools].name);
-	$(".education-entry:last").append(formattedSchoolName);
+	for(onlineCourses in education.onlineCourses) {
+		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourses].title);
+		$(".education-entry:last").append(formattedOnlineTitle);
+		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourses].school);
+		$(".education-entry:last").append(formattedOnlineSchool);
+		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourses].dates);
+		$(".education-entry:last").append(formattedOnlineDates);
+		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourses].url);
+		$(".education-entry:last").append(formattedOnlineURL);
+	}
 
 }
 
-education.display()
+education.display();
+
 
 // Add the map to the page
 $("#map-div").append(googleMap);
