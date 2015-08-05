@@ -107,6 +107,8 @@ bio.display = function() {
 	$("#header").prepend(formattedRole);
 	$("#header").prepend(formattedName);
 
+//	var formattedMobile = HTMLmobile.replace("%data%"), bio.contacts.mobile);
+
 
 	if(bio.skills.length > 0) {
 
@@ -120,13 +122,23 @@ bio.display = function() {
 		$("#skills").append(formattedSkill);
 
 	}
+
+
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#topContacts").append(formattedMobile);
+
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#topContacts").append(formattedEmail);
+
 }
 
 bio.display()
 
 work.display = function() {
+
+	$("#workExperience").append(HTMLworkStart);
+
 	for(job in work.jobs) {
-		$("#workExperience").append(HTMLworkStart);
 
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -175,8 +187,9 @@ $(document).click(function(loc) {
 
 //title, dates, description, images
 projects.display = function() {
+	$("#projects").append(HTMLprojectStart);
+
 	for(project in projects.project) {
-		$("#projects").append(HTMLprojectStart);
 
 		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.project[project].title);
 		$(".project-entry:last").append(formattedProjectTitle);
