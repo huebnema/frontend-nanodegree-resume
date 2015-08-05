@@ -219,9 +219,10 @@ projects.display()
 //Add education to the page
 
 education.display = function() {
-	$("#education").append(HTMLschoolStart);
 
 	for(schools in education.schools) {
+		$("#education").append(HTMLschoolStart);
+
 		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[schools].name);
 		$(".education-entry:last").append(formattedSchoolName);
 		var formattedDegreeName = HTMLschoolDegree.replace("%data%", education.schools[schools].degree);
@@ -235,6 +236,8 @@ education.display = function() {
 	$("#education").append(HTMLonlineClasses);
 
 	for(onlineCourses in education.onlineCourses) {
+		$("#education").append(HTMLschoolStart);
+
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourses].title);
 		$(".education-entry:last").append(formattedOnlineTitle);
 		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourses].school);
