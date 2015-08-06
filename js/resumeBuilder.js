@@ -72,7 +72,7 @@ var education = {
 	"schools": [
 		{
 			"name": "University of Wisconsin - Milwaukee",
-			"location": "Milwaukee, WI, United States",
+			"location": "Milwaukee, WI",
 			"degree": "BBA - Major:  Marketing, Minor: Anthropology",
 			"majors": "Marketing",
 			"minor": "Anthropology",
