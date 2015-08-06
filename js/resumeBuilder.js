@@ -63,7 +63,7 @@ var bio = {
 		"github" : "huebnema",
 		"location" : "Milwaukee, WI"
 	},
-	"welcomeMessage" : "Welcome to my resume! I'm an interaction designer who likes to learn about and dabble with code.",
+	"welcomeMessage" : "Welcome to my resume! I'm an interaction designer who likes to dabble with code.",
 	"skills" : ["Interaction Design", "Usability Research", "Prototyping"],
 	"bioPhoto" : "images/me.jpg"
 }
@@ -233,17 +233,20 @@ projects.display()
 
 education.display = function() {
 
+
 	for(schools in education.schools) {
 		$("#education").append(HTMLschoolStart);
 
 		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[schools].name);
-		$(".education-entry:last").append(formattedSchoolName);
 		var formattedDegreeName = HTMLschoolDegree.replace("%data%", education.schools[schools].degree);
-		$(".education-entry:last").append(formattedDegreeName);
+		var formattedSchool = formattedSchoolName + formattedDegreeName;
+		$(".education-entry:last").append(formattedSchool);
+
 		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[schools].dates);
 		$(".education-entry:last").append(formattedSchoolDates);
-		var formattedSchoolLocation = HTMLschoolDegree.replace("%data%", education.schools[schools].location);
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[schools].location);
 		$(".education-entry:last").append(formattedSchoolLocation);
+
 	}
 
 	$("#education").append(HTMLonlineClasses);
