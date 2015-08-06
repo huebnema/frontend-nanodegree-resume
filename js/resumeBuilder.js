@@ -109,14 +109,7 @@ bio.display = function() {
 
 	if(bio.skills.length > 0) {
 
-		$("#header").append(HTMLskillsStart);
 
-		var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-		$("#skills").append(formattedSkill);
-		formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-		$("#skills").append(formattedSkill);
-		formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-		$("#skills").append(formattedSkill);
 
 	}
 
@@ -138,6 +131,16 @@ bio.display = function() {
 
 	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 	$("#header").append(formattedWelcomeMsg);
+
+	//Skills section
+	$("#header").append(HTMLskillsStart);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkill);
 
 	//Footer info
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
