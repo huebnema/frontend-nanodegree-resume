@@ -63,7 +63,7 @@ var bio = {
 		"github" : "huebnema",
 		"location" : "Milwaukee, WI"
 	},
-	"welcomeMessage" : "Welcome to my resume!",
+	"welcomeMessage" : "Welcome to my resume! I'm an interaction designer who likes to learn about and dabble with code.",
 	"skills" : ["Interaction Design", "Usability Research", "Prototyping"],
 	"bioPhoto" : "images/me.jpg"
 }
@@ -120,7 +120,7 @@ bio.display = function() {
 
 	}
 
-
+	// Top info
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	$("#topContacts").append(formattedMobile);
 
@@ -138,6 +138,19 @@ bio.display = function() {
 
 	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 	$("#header").append(formattedWelcomeMsg);
+
+	//Footer info
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#footerContacts").append(formattedMobile);
+
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#footerContacts").append(formattedEmail);
+
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#footerContacts").append(formattedGithub);
+
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#footerContacts").append(formattedLocation);
 
 }
 
@@ -239,16 +252,15 @@ education.display = function() {
 		$("#education").append(HTMLschoolStart);
 
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourses].title);
-		$(".education-entry:last").append(formattedOnlineTitle);
 		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourses].school);
-		$(".education-entry:last").append(formattedOnlineSchool);
 		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourses].dates);
-		$(".education-entry:last").append(formattedOnlineDates);
 		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourses].url);
-		$(".education-entry:last").append(formattedOnlineURL);
-	}
 
-}
+		var formattedOnline = formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates + formattedOnlineURL;
+		$(".education-entry:last").append(formattedOnline);
+
+	}
+};
 
 education.display();
 

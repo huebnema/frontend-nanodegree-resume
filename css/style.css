@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #290E1E;
   line-height: 48px;
   display: inline;
 }
@@ -34,7 +34,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #290E1E;
   line-height: 29px;
   padding: 10px;
 }
@@ -65,7 +65,7 @@ h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #000;
   line-height: 16px;
   float: left;
 }
@@ -73,7 +73,7 @@ h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #000;
   line-height: 16px;
   float: right;
 
@@ -86,7 +86,7 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #000;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -100,16 +100,16 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #290E1E;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #BFAE93;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #290E1E;
 }
 
 .white-text {
@@ -118,18 +118,18 @@ a {
 }
 
 .gray {
-  background-color: #f3f3f3;
+  background-color: #DAD3C3;
   padding-bottom: 10px;
   clear:both;
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: #8A6D55;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #8A6D55;
 }
 
 .flex-box {
@@ -162,6 +162,7 @@ img {
 
 span {
   padding: 5px;
+  color: #290E1E;
 }
 
 #lets-connect {
@@ -202,8 +203,10 @@ span {
 
 #mapDiv {
   height: 400px;
-  width: 100%;
+  max-width: 90%;
   padding-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media only screen and (min-width: 750px) {
