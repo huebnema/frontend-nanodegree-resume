@@ -1,5 +1,3 @@
-'use strict';
-
 var work = {
 	"jobs": [
 		{
@@ -108,12 +106,6 @@ bio.display = function() {
 
 	$("#header").prepend(formattedRole);
 	$("#header").prepend(formattedName);
-
-	if(bio.skills.length > 0) {
-
-
-
-	}
 
 	// Top info
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
