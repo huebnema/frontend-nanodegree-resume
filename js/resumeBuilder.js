@@ -208,7 +208,7 @@ $(document).click(function(loc) {
 projects.display = function() {
 	$("#projects").append(HTMLprojectStart);
 
-	for(project in projects.project) {
+	for(var i=0; i< myArray.length; i++) {
 
 		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.project[project].title);
 		$(".project-entry:last").append(formattedProjectTitle);
